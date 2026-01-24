@@ -1,0 +1,6 @@
+# Dependencies
+node_modules/
+
+# Webpack generated
+dist/main.js
+dist/main.js.LICENSE.txt
