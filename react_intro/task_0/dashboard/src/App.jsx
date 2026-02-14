@@ -6,7 +6,7 @@ function App() {
     <>
       <div className="App-header">
       <img src={logo} alt="holberton logo" />
-      <h1 color='#e1003c'>School dashboard</h1>
+      <h1>School dashboard</h1>
       </div>
       <div className="App-body">
         <p>
