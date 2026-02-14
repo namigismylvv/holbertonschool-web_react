@@ -1,7 +1,7 @@
 import './App.css'
 import logo from "./assets/holberton-logo.jpg"
 function App() {
-
+  const year = new Date().getFullYear()
   return (
     <>
       <div className="App-header">
@@ -15,7 +15,7 @@ function App() {
       </div>
       <div className="App-footer">
         <p>
-          Copyright 2026 - holberton School
+          Copyright {year} - holberton School
         </p>
       </div>
     </>
