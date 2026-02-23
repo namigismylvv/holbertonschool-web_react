@@ -1,22 +1,19 @@
 import {render,screen} from "@testing-library/react"
 import App from "./App"
 
-test('renders h1 with School dashboard text', () => {
+test('should contain a <p/> element with specific text, <h1/>, and an <img/>', () => {
   render(<App />);
-  
-  const heading = screen.getByRole('heading',{
-    name: /school dashboard/i
-  });
 
-  expect(heading).toBeInTheDocument();
+  const currentYear = new Date().getFullYear();
+  const regex = new RegExp(`copyright ${currentYear} - holberton school`, 'i');
+
+  const headingElement = screen.getByRole('heading', { name: /school dashboard/i });
+  const paragraphElement = screen.getByText('Login to access the full dashboard');
+  const footerParagraphElement = screen.getByText(regex);
+  const imgElement = screen.getByRole('img');
+
+  expect(paragraphElement).toBeInTheDocument();
+  expect(footerParagraphElement).toBeInTheDocument();
+  expect(headingElement).toBeInTheDocument();
+  expect(imgElement).toBeInTheDocument();
 });
-test("renders the text within two p elements in the previous task",()=>{
-  render(<App/>);
-  const descs = screen.getByText(/login to access the full dashboard/i,/holberton school/i)
-  expect(descs).toBeInTheDocument()
-})
-test("renders the  image ",()=>{
-  render(<App/>)
-  const image = screen.getByAltText(/holberton logo/i)
-  expect(image).toBeInTheDocument()
-})
